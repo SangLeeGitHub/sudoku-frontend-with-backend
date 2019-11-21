@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jasmine-node spec --verbose",
     "backend": "node app.js&",
-    "build": "npm install && npm test && npm run backend && cd client && npm install && npm test && curl http://localhost:8080/sudoku/close && npm run build",
+    "build": "npm install && npm test && npm run backend && cd client && npm install && npm test && curl http://localhost:8081/sudoku/close && npm run build",
     "start": "node app.js"
   },
   "author": "",
