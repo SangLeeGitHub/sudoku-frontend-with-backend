@@ -1,19 +1,18 @@
-#### Continues from Level 1
+#### - Continues from Level 1
 ### Sudoku frontend with backend (Level 2)
 
 #### Techniques used : React, Express
 
 * Prepare folder and install npm modules
     * Modify the scripts part in the package.json like
-```javascript  
-  "scripts": {
-    "test": "jasmine-node spec --verbose",
-    "backend": "node app.js&",
-    "build": "npm install && npm test && npm run backend && cd client && npm install && npm test && curl http://localhost:8081/sudoku/close && npm run build",
-    "start": "node app.js"
-  },
-```
-.
+    ```javascript  
+      "scripts": {
+        "test": "jasmine-node spec --verbose",
+        "backend": "node app.js&",
+        "build": "npm install && npm test && npm run backend && cd client && npm install && npm test && curl http://localhost:8081/sudoku/close && npm run build",
+        "start": "node app.js"
+      },
+    ```
     * (sudo if your system needs) npm i react-create-app -g
     * `create-react-app client` on the project root folder.
     * `cd client/src`
