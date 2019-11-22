@@ -14,26 +14,30 @@
       },
     ```
     * Modify the dependencies and scripts part in the client/package.json like
-   ```javascript  
-   "dependencies": {
-    "@babel/runtime": "^7.7.2",
-    "@fortawesome/fontawesome-free": "^5.11.2",
-    "@fortawesome/fontawesome-svg-core": "^1.2.25",
-    "@fortawesome/free-solid-svg-icons": "^5.11.2",
-    "@fortawesome/react-fontawesome": "^0.1.7",
-    "babel-preset-react-app": "^9.0.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-scripts": "3.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "CI=true react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  ```
-    it is because of special fonts and test.
+     ```javascript  
+      "dependencies": {
+       "@babel/runtime": "^7.7.2",
+       "@fortawesome/fontawesome-free": "^5.11.2",
+       "@fortawesome/fontawesome-svg-core": "^1.2.25",
+       "@fortawesome/free-solid-svg-icons": "^5.11.2",
+       "@fortawesome/react-fontawesome": "^0.1.7",
+       "babel-preset-react-app": "^9.0.2",
+       "react": "^16.12.0",
+       "react-dom": "^16.12.0",
+       "react-scripts": "3.2.0"
+     },
+     "scripts": {
+       "start": "react-scripts start",
+       "build": "react-scripts build",
+       "test": "CI=true react-scripts test --env=jsdom",
+       "eject": "react-scripts eject"
+     },
+     ```
+    It is because of special fonts and test. And add the proxy like 
+     ```
+     "proxy": "http://localhost:8081"
+     ```
+    It is because the Ajax call from the frontend needs to be routed to port 8081
     * ('sudo' if your system needs) `npm i react-create-app -g`
     * `create-react-app client` on the project root folder.
     * `cd client/src`
