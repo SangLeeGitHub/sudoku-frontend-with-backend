@@ -12,10 +12,10 @@
     "build": "npm install && npm test && npm run backend && cd client && npm install && npm test && curl http://localhost:8081/sudoku/close && npm run build",
     "start": "node app.js"
   },
-```
-    * (sudo if your system needs) npm i react-create-app -g
-    * `create-react-app client` on the project root folder.
-    * `cd client/src`
+  ```
+   * (sudo if your system needs) npm i react-create-app -g
+   * `create-react-app client` on the project root folder.
+   * `cd client/src`
  
 * Program with app.js
     * Put codes for `GET /sudoku/board` into `app.get('/sudoku/board', ...`<br>
