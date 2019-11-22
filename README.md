@@ -14,7 +14,7 @@
       },
     ```
     * Modify the dependencies and scripts part in the client/package.json like
-   ```
+   ```javascript  
    "dependencies": {
     "@babel/runtime": "^7.7.2",
     "@fortawesome/fontawesome-free": "^5.11.2",
@@ -58,8 +58,30 @@
 * Add the API in app.js on the project root folder. 
     * To serve the frontend files, put some codes into `app.get('*',`
     
-* Test 
+* Configure the nginx
+   * Modify nginx.conf (Linux - in /etc/nginx/, macOS - in /usr/local/etc/nginx/) 
+   ```
+   worker_processes  1;
+
+    events {
+        worker_connections 1024;
+    }
+
+    http {
+        server {
+            listen 8080;
+            server_name localhost;
+
+            location / {
+                proxy_pass http://localhost:8081;
+            }
+        }
+    }
+    ```
+    * restart the nginx.
+    
+* Build and test 
    * `npm run build` on the project root directory.
    
 * Run
-   * `node app.js`
+   * `npm start`
