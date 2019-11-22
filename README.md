@@ -13,21 +13,51 @@
         "start": "node app.js"
       },
     ```
-    * (sudo if your system needs) npm i react-create-app -g
+    * Modify the dependencies and scripts part in the client/package.json like
+   ```
+   "dependencies": {
+    "@babel/runtime": "^7.7.2",
+    "@fortawesome/fontawesome-free": "^5.11.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "babel-preset-react-app": "^9.0.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "CI=true react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  ```
+    it is because of special fonts and test.
+    * ('sudo' if your system needs) `npm i react-create-app -g`
     * `create-react-app client` on the project root folder.
     * `cd client/src`
  
-* Program with app.js
-    * Put codes for `GET /sudoku/board` into `app.get('/sudoku/board', ...`<br>
-    * See [app.js](https://github.com/hotdeveloper/sudoku-backend/blob/master/app.js)
+* Program with App.js
+    * Class App
+        * Main class to render subclasses.
+    * Class Board 
+        * Method componentDidMount() : Send a Ajax request to get a Sudoku array from the Server
+        * Method render() : Draw 9x9 cells with the Sudoku array and the reload button.
+    * Class Square
+        * Method render() : Draw a cell include a Sudoku number.
+    * See [App.js](https://github.com/hotdeveloper/sudoku-frontend-with-backend/blob/master/client/src/App.js)
 
-* Add the API test 
-    * mkdir spec
-    * Put the test codes for the Sudoku rule into spec/backend.spec.js
-    * Read each row and sorting array and compare the [0,1,2,3,4,5,6,7,8]
-    * Read each column and sorting array and compare the [0,1,2,3,4,5,6,7,8]
-    * See [spec/backend.spec.js](https://github.com/hotdeveloper/sudoku-backend/blob/master/spec/backend.spec.js)
+* Add some CSS into App.css
+    * See [App.css](https://github.com/hotdeveloper/sudoku-frontend-with-backend/blob/master/client/src/App.css)
 
+* Code for testing into App.test.js
+    * Checking the drawing of the 9x9 grid properly.  
+    * Use Async keyword to deal with the delay from the Ajax call.
+    
+* Add the API in app.js on the project root folder. 
+    * To serve the frontend files, put some codes into `app.get('*',`
+    
 * Test 
    * `npm run build` on the project root directory.
    
