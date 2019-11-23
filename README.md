@@ -57,7 +57,7 @@
 
 * Code for testing into App.test.js
     * Checking the drawing of the 9x9 grid properly.  
-    * Use Async keyword to deal with the delay from the Ajax call.
+    * Use the Async keyword to deal with the delay from the Ajax call.
     
 * Add the API in app.js on the project root folder. 
     * To serve the frontend files, put some codes into `app.get('*',`
