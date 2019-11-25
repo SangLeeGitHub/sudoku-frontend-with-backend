@@ -82,7 +82,7 @@
         }
     }
     ```
-    * restart the nginx.
+    * Restart the nginx.
     
 * Build and test 
    * `npm run build` on the project root directory.
