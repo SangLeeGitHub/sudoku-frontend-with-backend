@@ -46,7 +46,8 @@
     * Class App
         * Main class to render subclasses.
     * Class Board 
-        * Method componentDidMount() : Send a Ajax request to get a Sudoku array from the Server
+        * Method componentDidMount() : Send a Ajax request to get a Sudoku array from the Server.
+            - componentDidMount() is one of the methods in the React Lifecycle. This method runs after the component output has been rendered to the DOM.
         * Method render() : Draw 9x9 cells with the Sudoku array and the reload button.
     * Class Square
         * Method render() : Draw a cell include a Sudoku number.
